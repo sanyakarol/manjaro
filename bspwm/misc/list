@@ -1,0 +1,23 @@
+#!/bin/bash
+case $1 in
+    [0-9])
+        desktop=$1
+    ;;
+    'all')
+        desktop=$(seq 0 9)
+    ;;
+    *)
+        desktop=$(xdotool get_desktop)
+    ;;
+esac
+
+if (( $2 )); then
+    max_length=$2
+else
+    max_length=40
+fi
+
+for d in $desktop; do
+    list=$HOME/.config/bspwm/log/toggle.window_list.$d
+    [[ -e $list ]] && for l in $(cat $list); do title=$(xtitle $l); echo -n ${title:0:$max_length}... ' | '; done
+done

@@ -1,0 +1,3 @@
+#!/bin/bash
+resize=~/.config/bspwm/misc/_resize
+$($resize floating)
