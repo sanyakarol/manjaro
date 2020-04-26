@@ -1,0 +1,117 @@
+﻿# bspwm hotkeys
+#
+# Cleanly quit bspwm
+ctrl + shift + Escape
+	kitty htop
+
+super + m
+	/home/sanya/.config/polybar/scripts/menu
+	
+super + shift + m
+    pavucontrol
+
+super + Return
+	kitty
+
+super + ctrl + b
+	kitty bmenu
+
+super + shift + s
+    pkill -USR1 -x sxhkd; dunstify "Sxhkd configuration reloaded"
+
+super + shift + t
+    telegram-desktop
+    
+super + shift + v
+    viber
+
+super + shift + p
+	bash /home/sanya/.config/polybar/launch1.sh; dunstify "Polybar reloaded"
+
+super + shift + r
+    bspc wm -r; dunstify "bspwm reload"
+
+	#Volume Control
+XF86AudioLowerVolume
+	amixer set Master 5%-
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+XF86AudioMute
+        amixer set Master toggle
+
+XF86AudioPlay
+	playerctl play-pause
+XF86AudioNext
+	playerctl next
+XF86AudioPrev
+	playerctl previous
+
+
+
+
+
+# Window manipulation
+# ______________
+
+# Close window
+super + q
+	bspc  node -c
+
+
+super + 0
+	bspc quit
+
+# go (Shift=move) to desktop (and focus the monitor that the desktop is located on. Bspwm style)
+super + {_,shift + }{1-9,0}
+    bspc {desktop -f,node -d} ^{1-9,10}
+
+
+
+
+
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+super + f
+	bspc node -t {fullscreen,tiled}
+
+super + shift + z
+	bspc node -t {floating,tiled}
+
+super + space
+	{setxkbmap ru, setxkbmap us}
+
+# resize the node horizontally
+super + {_, shift +}{Right,Left}
+  bspc node -z {right,left} {20 0,-20 0}
+
+# resize the node vertically
+super + {_, shift +}{Down,Up}
+  bspc node -z {bottom,top} {0 20,0 -20}
+
+
+super + z + {Left,Down,Up,Right}
+	windowgrabber {left,down,up,right}
+
+Print
+	flameshot gui
+
+# mouse bindings
+# __________________
+
+~button1
+	DidIClickDesktop.sh && gapgrab	
+
+~button2
+	DidIClickDesktop.sh && mygtkmenui -- .config/GTKmenu/BspwmDesktopMenui
+#DidIClickDesktop.sh && mygtkmenui -- .config/GTKmenu/BspwmWindowMenui
+		
+~button3
+	DidIClickDesktop.sh && mygtkmenui -- .config/GTKmenu/LaunchMenu
+
+
+super + d
+	rofi -show run
+
