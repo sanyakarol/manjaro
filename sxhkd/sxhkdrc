@@ -17,7 +17,7 @@ super + ctrl + b
 	kitty bmenu
 
 super + shift + s
-    pkill -USR1 -x sxhkd; dunstify "Sxhkd configuration reloaded"
+    killall sxhkd -q && sleep 1 && sxhkd && dunstify "sxhkd reloaded"
 
 super + shift + t
     telegram-desktop
@@ -33,11 +33,11 @@ super + shift + r
 
 	#Volume Control
 XF86AudioLowerVolume
-	amixer set Master 5%-
+	amixer set Master 5%- && dunstify "Volume down"
 XF86AudioRaiseVolume
-	amixer set Master 5%+
+	amixer set Master 5%+ && dunstify "Volume up"
 XF86AudioMute
-        amixer set Master toggle
+        amixer set Master toggle && dunstify "Volume mute"
 
 XF86AudioPlay
 	playerctl play-pause
@@ -92,8 +92,7 @@ super + {_, shift +}{Down,Up}
   bspc node -z {bottom,top} {0 20,0 -20}
 
 
-super + z + {Left,Down,Up,Right}
-	windowgrabber {left,down,up,right}
+
 
 Print
 	flameshot gui
@@ -115,3 +114,21 @@ Print
 super + d
 	rofi -show run
 
+# hide window
+super + u
+  bspc node -g hidden
+
+# unhide window
+super + shift + u
+  bspc node {,$(bspc query -N -n .hidden | tail -n1)} -g hidden=off
+
+XF86MonBrightnessUp
+	xbacklight +10
+XF86MonBrightnessDown
+	xbacklight -Q10
+
+super + shift +q
+	bspc node @parent -R 90
+
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -s {west,south,north,east}
