@@ -22,7 +22,7 @@ viber &
 
 bspc monitor -d I II III IV V VI VII VIII
 
-dwall -firewatch &
+dwall -s=mojave &
 
 
 #	██████╗ ███████╗██████╗ ██╗    ██╗███╗   ███╗
@@ -95,7 +95,7 @@ xsetroot -cursor_name bibata_oil
 #redshift &
 #/home/gamehelp16/allfloat.sh &
 
-
+clight &
 #dunst
 dunst &
 
@@ -104,8 +104,10 @@ dunst &
 bash /home/sanya/.config/polybar/launch1.sh &
 bash /home/sanya/pulse.sh &
 bash /home/sanya/clear.sh &
+
+while true; do ./bat.sh; sleep 30; done &
 #nitrogen --restore &
-xfce4-power-manager &
+#xfce4-power-manager &
 #bash hideIt.sh --name '^Polybar tray window$' --region 0x0+20+20 $
 # Password for Admin
 #kitty python3 /home/sanya/dynwalls/dynwalls use gora.heic &
