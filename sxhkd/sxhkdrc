@@ -97,18 +97,6 @@ super + {_, shift +}{Down,Up}
 Print
 	flameshot gui
 
-# mouse bindings
-# __________________
-
-~button1
-	DidIClickDesktop.sh && gapgrab	
-
-~button2
-	DidIClickDesktop.sh && mygtkmenui -- .config/GTKmenu/BspwmDesktopMenui
-#DidIClickDesktop.sh && mygtkmenui -- .config/GTKmenu/BspwmWindowMenui
-		
-~button3
-	DidIClickDesktop.sh && mygtkmenui -- .config/GTKmenu/LaunchMenu
 
 
 super + d
@@ -123,9 +111,9 @@ super + shift + u
   bspc node {,$(bspc query -N -n .hidden | tail -n1)} -g hidden=off
 
 XF86MonBrightnessUp
-	xbacklight +10
+    brightnessctl s +10%
 XF86MonBrightnessDown
-	xbacklight -Q10
+    brightnessctl s 10%- 
 
 super + shift +q
 	bspc node @parent -R 90
