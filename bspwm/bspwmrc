@@ -13,14 +13,14 @@ export gap
 #killall picom -q && sleep 1 &
 killall polybar -q &
 picom &
-compton &
+compton --backend glx --paint-on-overlay --vsync opengl-swc &
 sxhkd &
 clipit &
 #kitty &
 telegram-desktop &
-viber &
+#viber &
 
-bspc monitor -d I II III IV V VI VII VIII
+bspc monitor -d 1 2 3 4 5 6 7 8 9     
 
 dwall -s=mojave &
 
@@ -58,7 +58,7 @@ bspc rule -a Pamac-manager state=floating rectangle=1100x800+410+240
 bspc rule -a Pulseaudio-equalizer-gtk state=floating rectangle=800x600+560+240
 bspc rule -a Pavucontrol state=floating rectangle=800x600+560+240
 bspc rule -a ViberPC state=floating rectangle=1100x600+410+240
-bspc rule -a TelegramDesktop state=floating rectangle=410+240
+bspc rule -a TelegramDesktop state=floating node=private
 #bspc rule -a Gimp desktop=^8 state=floating follow=on
 #bspc rule -a Google-chrome desktop=^1
 #bspc rule -a Genymotion desktop=^3
@@ -95,7 +95,7 @@ xsetroot -cursor_name bibata_oil
 #redshift &
 #/home/gamehelp16/allfloat.sh &
 
-clight &
+#clight &
 #dunst
 dunst &
 
