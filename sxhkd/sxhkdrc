@@ -19,10 +19,10 @@ super + ctrl + b
 super + shift + s
     killall sxhkd -q && sleep 1 && sxhkd && dunstify "sxhkd reloaded"
 
-super + shift + t
+super + t
     telegram-desktop
     
-super + shift + v
+super + v
     viber
 
 super + shift + p
@@ -100,7 +100,7 @@ Print
 
 
 super + d
-	rofi -show run
+	/home/sanya/.config/polybar/scripts/menu
 
 # hide window
 super + u
@@ -120,3 +120,21 @@ super + shift +q
 
 super + ctrl + {Left,Down,Up,Right}
 	bspc node -s {west,south,north,east}
+
+super + shift + l 
+	dunstify "clight launched" && clight  
+
+super + shift + k
+	killall clight -q && dunstify "clight killed"
+
+super + {_,shift +} e
+	{pcmanfm, pulseaudio-equalizer-gtk}
+
+super + f
+	firefox
+
+super + {_,shift +}  c
+	{google-chrome-stable, chromium}
+
+super + k
+	kcalc
