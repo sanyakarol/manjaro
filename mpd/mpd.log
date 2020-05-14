@@ -1,0 +1,23 @@
+May 14 17:50 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+May 14 17:50 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+May 14 17:50 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+May 14 17:50 : client: [0] opened from 127.0.0.1:50718
+May 14 17:50 : client: [1] opened from 127.0.0.1:50722
+May 14 17:50 : avahi: Service 'Music Player @ sanya-80xr' successfully established.
+May 14 17:50 : client: [1] closed
+May 14 17:50 : client: [2] opened from 127.0.0.1:50724
+May 14 17:50 : client: [2] closed
+May 14 17:50 : client: [3] opened from 127.0.0.1:50726
+May 14 17:50 : client: [3] closed
+May 14 17:51 : client: [4] opened from 127.0.0.1:50770
+May 14 17:51 : client: [4] closed
+May 14 17:51 : client: [5] opened from 127.0.0.1:50772
+May 14 17:51 : client: [5] closed
+May 14 17:51 : client: [6] opened from 127.0.0.1:50774
+May 14 17:51 : client: [6] closed
+May 14 17:52 : client: [7] opened from 127.0.0.1:50776
+May 14 17:52 : client: [7] closed
+May 14 17:52 : client: [8] opened from 127.0.0.1:50778
+May 14 17:52 : client: [8] closed
+May 14 17:52 : client: [9] opened from 127.0.0.1:50782
+May 14 17:52 : client: [9] closed
