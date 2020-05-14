@@ -1,4 +1,7 @@
-﻿# bspwm hotkeys
+#################################################################
+# KEYBOARD BINDINGS FOR ANY TWM
+#################################################################
+# bspwm hotkeys
 #
 # Cleanly quit bspwm
 ctrl + shift + Escape
@@ -6,7 +9,7 @@ ctrl + shift + Escape
 
 super + m
 	/home/sanya/.config/polybar/scripts/menu
-	
+
 super + shift + m
     pavucontrol
 
@@ -16,12 +19,16 @@ super + Return
 super + ctrl + b
 	kitty bmenu
 
+	#arcolinux-logout
+super + x
+	arcolinux-logout
+
 super + shift + s
-    killall sxhkd -q && sleep 1 && sxhkd && dunstify "sxhkd reloaded"
+    killall sxhkd -q && sleep 1 && sxhkd -c /home/sanya/.config/bspwm/sxhkd/sxhkdrc && dunstify "sxhkd reloaded"
 
 super + t
     telegram-desktop
-    
+
 super + v
     viber
 
@@ -40,11 +47,14 @@ XF86AudioMute
         amixer set Master toggle && dunstify "Volume mute"
 
 XF86AudioPlay
-	playerctl play-pause
+	playerctl play-pause; \
+	mpc toggle  
 XF86AudioNext
-	playerctl next
+	playerctl next; \
+	mpc next
 XF86AudioPrev
-	playerctl previous
+	playerctl previous; \
+	mpc prev
 
 
 
@@ -62,13 +72,13 @@ super + 0
 	bspc quit
 
 # go (Shift=move) to desktop (and focus the monitor that the desktop is located on. Bspwm style)
-super + {_,shift + }{1-9,0}
-    bspc {desktop -f,node -d} ^{1-9,10}
-
-
-
-
-
+super + shift + {1-9}
+	DIR={1-9}; \
+	bspc node -d "$DIR"; \
+	bspc desktop -f "$DIR"
+	
+super + {1-9}
+	bspc desktop -f {1-9}
 
 # move a floating window
 super + {Left,Down,Up,Right}
@@ -113,7 +123,7 @@ super + shift + u
 XF86MonBrightnessUp
     brightnessctl s +10%
 XF86MonBrightnessDown
-    brightnessctl s 10%- 
+    brightnessctl s 10%-
 
 super + shift +q
 	bspc node @parent -R 90
@@ -121,16 +131,10 @@ super + shift +q
 super + ctrl + {Left,Down,Up,Right}
 	bspc node -s {west,south,north,east}
 
-super + shift + l 
-	dunstify "clight launched" && clight  
-
-super + shift + k
-	killall clight -q && dunstify "clight killed"
-
 super + {_,shift +} e
 	{pcmanfm, pulseaudio-equalizer-gtk}
 
-super + f
+super + shift + f
 	firefox
 
 super + {_,shift +}  c
@@ -138,3 +142,5 @@ super + {_,shift +}  c
 
 super + k
 	kcalc
+
+#################################################################
