@@ -68,7 +68,7 @@ bspc config gapless_monocle     false
 
 #bspc desktop ^1 -l monocle
 
-#################       xprop | grep WM_CLASS                                                      18:29:54
+#################       xprop | grep WM_CLASS                                           
 
 bspc rule -a Pamac-manager state=floating rectangle=1100x800+410+240
 bspc rule -a Pulseaudio-equalizer-gtk state=floating rectangle=800x600+560+240
