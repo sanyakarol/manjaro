@@ -7,9 +7,6 @@
 ctrl + shift + Escape
 	kitty htop
 
-super + m
-	/home/sanya/.config/polybar/scripts/menu
-
 super + shift + m
     pavucontrol
 
@@ -21,17 +18,19 @@ super + ctrl + b
 
 	#arcolinux-logout
 super + x
-	arcolinux-logout
+	~/.config/polybar/scripts/sysmenu
 
 super + shift + s
     killall sxhkd -q && sleep 1 && sxhkd -c /home/sanya/.config/bspwm/sxhkd/sxhkdrc && dunstify "sxhkd reloaded"
 
 super + t
-    telegram-desktop
+    telegram-desktop; \
+	bspc desktop -f 9
 
 super + v
-    viber
-
+    viber; \
+	bspc desktop -f 9
+	
 super + shift + p
 	bash /home/sanya/.config/polybar/launch1.sh; dunstify "Polybar reloaded"
 
@@ -40,11 +39,11 @@ super + shift + r
 
 	#Volume Control
 XF86AudioLowerVolume
-	amixer set Master 5%- && dunstify "Volume down"
+	amixer set Master 5%- 
 XF86AudioRaiseVolume
-	amixer set Master 5%+ && dunstify "Volume up"
+	amixer set Master 5%+
 XF86AudioMute
-        amixer set Master toggle && dunstify "Volume mute"
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 XF86AudioPlay
 	playerctl play-pause; \
@@ -68,7 +67,7 @@ super + q
 	bspc  node -c
 
 
-super + 0
+super + shift + 0
 	bspc quit
 
 # go (Shift=move) to desktop (and focus the monitor that the desktop is located on. Bspwm style)
@@ -82,7 +81,7 @@ super + {1-9}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+	bspc node -v {-50 0,0 50,0 -50,50 0}
 
 super + f
 	bspc node -t {fullscreen,tiled}
@@ -95,30 +94,24 @@ super + space
 
 # resize the node horizontally
 super + {_, shift +}{Right,Left}
-  bspc node -z {right,left} {20 0,-20 0}
+  bspc node -z {right,left} {50 0,-50 0}
 
 # resize the node vertically
 super + {_, shift +}{Down,Up}
-  bspc node -z {bottom,top} {0 20,0 -20}
+  bspc node -z {bottom,top} {0 50,0 -50}
 
 
-
-
-Print
+super + Print
 	flameshot gui
 
-
+Print
+	flameshot full -c -p ~/Pictures
 
 super + d
 	/home/sanya/.config/polybar/scripts/menu
 
-# hide window
 super + u
-  bspc node -g hidden
-
-# unhide window
-super + shift + u
-  bspc node {,$(bspc query -N -n .hidden | tail -n1)} -g hidden=off
+	bspc node {,$(bspc query -N -d -n .hidden | head -n 1)} -g hidden
 
 XF86MonBrightnessUp
     brightnessctl s +10%
@@ -143,4 +136,20 @@ super + {_,shift +}  c
 super + k
 	kcalc
 
-#################################################################
+super + s
+	lxappearance
+
+super + a
+	ario
+
+super + m
+	kitty sudo mc /mnt/hdd
+
+super + n
+	kitty ncmpcpp
+
+super + alt + {Left,Down,Up,Right}
+	bspc node -f {west,south,north,east}
+
+super + {_,shift +} Tab
+	bspc desktop -f {next, prev}
