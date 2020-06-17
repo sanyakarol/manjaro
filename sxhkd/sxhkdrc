@@ -18,7 +18,8 @@ super + ctrl + b
 
 	#arcolinux-logout
 super + x
-	~/.config/polybar/scripts/sysmenu
+	#kitty bash ~/.config/polybar/scripts/sysmenu
+	kitty bash qdbus org.kde.ksmserver /KSMServer logout 1 3 3
 
 super + shift + s
     killall sxhkd -q && sleep 1 && sxhkd -c /home/sanya/.config/bspwm/sxhkd/sxhkdrc && dunstify "sxhkd reloaded"
@@ -68,7 +69,7 @@ super + q
 
 
 super + shift + 0
-	bspc quit
+	qdbus org.kde.ksmserver /KSMServer logout 1 3 3
 
 # go (Shift=move) to desktop (and focus the monitor that the desktop is located on. Bspwm style)
 super + shift + {1-9}
@@ -108,15 +109,16 @@ Print
 	flameshot full -c -p ~/Pictures
 
 super + d
+	setxkbmap us; \
 	/home/sanya/.config/polybar/scripts/menu
 
 super + u
 	bspc node {,$(bspc query -N -d -n .hidden | head -n 1)} -g hidden
 
-XF86MonBrightnessUp
-    brightnessctl s +10%
-XF86MonBrightnessDown
-    brightnessctl s 10%-
+#XF86MonBrightnessUp
+ #   brightnessctl s +10%
+#XF86MonBrightnessDown
+ #   brightnessctl s 10%-
 
 super + shift +q
 	bspc node @parent -R 90
@@ -151,5 +153,11 @@ super + n
 super + alt + {Left,Down,Up,Right}
 	bspc node -f {west,south,north,east}
 
-super + {_,shift +} Tab
-	bspc desktop -f {next, prev}
+super + Tab
+	bspc desktop -f next
+
+super + grave
+	bspc desktop -f prev
+
+alt + d
+	/home/sanya/.config/polybar/scripts/menu
