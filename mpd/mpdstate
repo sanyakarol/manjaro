@@ -1,72 +1,18 @@
 sw_volume: 38
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: play
-current: 11
-time: 4.166000
+state: pause
+current: 0
+time: 39.645000
 random: 1
-repeat: 0
+repeat: 1
 single: 0
 consume: 0
 crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:7000,Тэм - Пламя свободы.mp3
-1:Amatory - Север.mp3
-2:Arctic Monkeys - Dont Sit Down Cause Ive Moved Your Chair.mp3
-3:Freddie Dredd - Opaul.mp3
-4:Gidayyat - Коронаминус.mp3
-5:GoA - Жальменiна.mp3
-6:saypink - Молодость со мной.mp3
-7:7000,Тэм - Пламя свободы.mp3
-8:Amatory - Север.mp3
-9:Arctic Monkeys - Dont Sit Down Cause Ive Moved Your Chair.mp3
-10:Big Russian Boss,Young PH - Coronavirus.mp3
-11:Deorro,Chris Brown - Five More Hours (Deorro x Chris Brown).mp3
-12:Freddie Dredd - Opaul.mp3
-13:Gidayyat - Коронаминус.mp3
-14:GoA - Жальменiна.mp3
-15:GoA - Кольоровими фарбами.mp3
-16:Grivina - Последний танец.mp3
-17:Grivina - Рушится.mp3
-18:Grivina,BIZZNAME - Любим грубо.mp3
-19:I Prevail - Gasoline.mp3
-20:I Prevail,Justin Stone - Rise Above It.mp3
-21:JSon - Караван.mp3
-22:Killswitch Engage - This Fire.mp3
-23:LIRANOV - Гюрза.mp3
-24:LIRANOV,RAFAL - Катим по ночной Москве.mp3
-25:Main-De-Gloire - Run.mp3
-26:Mario Joy - California.mp3
-27:Mario Joy - Gold Digger.mp3
-28:Mark The Beast - Breathe.mp3
-29:OCloque - Пушка.mp3
-30:Otilia,Y3MR - Adelante.mp3
-31:Our Last Night - HUMBLE.mp3
-32:PVNTERV,Roully - Буратино.mp3
-33:Roully - Двигай телом.mp3
-34:saypink - Gangsta Shit.mp3
-35:saypink - Молодость со мной.mp3
-36:Sondr,Vize,Lilly Ahlberg - Kids.mp3
-37:Stephan F - Astronomia 2K19.mp3
-38:Tardigrade Inferno - We Are Number One.mp3
-39:The Devil Wears Prada - Chemical.mp3
-40:The Unguided,Zardonic - Phoenix Down.mp3
-41:Timmy Trumpet,Savage - Freaks.mp3
-42:Vector Of Underground - Дальше Ориона.mp3
-43:wildbeezy - Numb and Frozen.mp3
-44:Wildways - Мрак.mp3
-45:Wildways - Страх.mp3
-46:XIII,Sensimilla - Квартал не выросших крыльев.mp3
-47:Zmey Gorynich - Борода.mp3
-48:Аффинаж - Котик.mp3
-49:Ганвест - Кайфули.mp3
-50:Грязь - Рычит мотор.mp3
-51:Грязь,PLATON,PIGGY BANG - Love Story.mp3
-52:Джизус - Открой глаза (или закрой свой рот).mp3
-53:Казнный Унитаз - Мастурбас.mp3
-54:Три дня дождя - Демоны.mp3
-55:Эрика Лундмоен - Глубина.mp3
-56:Эрика Лундмоен - Яд.mp3
+song_begin: https://hitfm.hostingradio.ru/hitfm128.mp3
+Name: hitfm
+song_end
 playlist_end
